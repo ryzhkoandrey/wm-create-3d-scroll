@@ -4,7 +4,7 @@ let zSpacing = -1000,
     lastPos = zSpacing / 5,
     $frames = document.getElementsByClassName('frame'),
     frame = Array.from($frames),
-    zVal = [];
+    zVals = [];
 
 window.onscroll = function () {
 
@@ -13,5 +13,11 @@ window.onscroll = function () {
 
     lastPos = top;
 
-    frames.forEach(function () { });
+    frames.forEach(function (n, i) {
+        zVals.push((i * zSpacing) + zSpacing);
+        zVals[i] += delta * -5;
+        let frame = frames[i],
+            transform = `translateZ(${zVals[i]}px)`;
+        frame.setAttribute('style', `transform: ${transform}`);
+    });
 }
