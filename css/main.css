@@ -112,6 +112,11 @@ video.frame-media_right {
     left: 18vw;
 }
 
+.text-left > * {
+    position: relative;
+    right: 18vw;
+}
+
 .frame h3 {
     font-size: calc(var(--index) * 3);
 }
@@ -120,5 +125,3 @@ video.frame-media_right {
     max-width: 30vw;
     margin-top: 3vh;
 }
-
-.text-left {}
